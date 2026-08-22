@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Outfit', 'Plus Jakarta Sans', 'Inter', sans-serif;
+    color: #1a1917;
+    background-color: #faf8f5;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  body {
+    font-family: 'Outfit', 'Plus Jakarta Sans', 'Inter', sans-serif;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #c9a53a;
+    color: #0f0e0c;
+  }
+}
+
+/* Remove Visible Scrollbar from Right Hand Side Completely */
+::-webkit-scrollbar {
+  display: none !important;
+  width: 0px !important;
+  height: 0px !important;
+}
+
+/* Heading font classes */
+.font-serif-heading {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-serif-display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans-body {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+}
+
+/* 3D Perspective Book Turn Utilities */
+.perspective-1000 {
+  perspective: 1200px;
+}
+
+.rotate-y-12 {
+  transform: rotateY(-12deg);
+}
+
+.rotate-y-0 {
+  transform: rotateY(0deg);
+}
+
+/* Typewriter Clean Solid #c9a53a (No Glow) */
+.typewriter-text {
+  color: #c9a53a;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.1em;
+  background-color: #c9a53a;
+  margin-left: 2px;
+  vertical-align: middle;
+  box-shadow: none !important;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Two-sided Parting Button Animation Rules */
+.btn-parting {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-parting .part-left {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-parting .part-right {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-parting:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(201, 165, 58, 0.35), 0 0 15px rgba(201, 165, 58, 0.2);
+}
+
+.btn-parting:hover .part-left {
+  transform: translateX(-6px);
+}
+
+.btn-parting:hover .part-right {
+  transform: translateX(6px);
+}
+
+/* Footer Link Slide Animation */
+.footer-link {
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #c9a53a;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.footer-link:hover {
+  color: #c9a53a;
+  transform: translateX(4px);
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+/* Luxury Fine Golden Pinstripe Grid Pattern */
+.bg-luxury-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(201, 165, 58, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(201, 165, 58, 0.05) 1px, transparent 1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
