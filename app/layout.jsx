@@ -47,6 +47,14 @@ export const metadata = {
       'Bespoke Canadian bathroom and kitchen renovations. Modern, elegant, turnkey craftsmanship.',
     images: ['/images/hero-bathroom.jpg'],
   },
+  icons: {
+    icon: [
+      { url: '/logo.png', type: 'image/png' },
+      { url: '/favicon.ico' },
+    ],
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
   robots: {
     index: true,
     follow: true,
@@ -57,6 +65,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/logo.png" type="image/png" />
+        <link rel="shortcut icon" href="/logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
         <link rel="canonical" href="https://solidbathandkitchen.ca" />
       </head>
       <body className="bg-white text-black antialiased">
